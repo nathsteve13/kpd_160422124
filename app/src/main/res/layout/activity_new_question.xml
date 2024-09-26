@@ -79,7 +79,7 @@
                     android:id="@+id/radioTemplate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checked="true"
+                    android:checked="false"
                     android:text="Use Template" />
 
                 <RadioButton
@@ -91,7 +91,7 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/labelChooseImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -109,10 +109,10 @@
                 android:layout_marginEnd="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                app:layout_constraintTop_toBottomOf="@+id/labelChooseImage" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/labelImageURL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -131,7 +131,7 @@
                 android:inputType="text"
                 android:text="enter valid image URL"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/labelImageURL" />
 
             <TextView
                 android:id="@+id/textView6"

@@ -27,4 +27,12 @@ class QuestionListActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.recQuestion.layoutManager = LinearLayoutManager(this)
+        binding.recQuestion.setHasFixedSize(true)
+        binding.recQuestion.adapter = QuestionAdapter()
+    }
+
+
 }
