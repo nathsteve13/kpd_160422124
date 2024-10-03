@@ -1,6 +1,7 @@
 package com.ubaya.kpd_160422124
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -10,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.squareup.picasso.Picasso
 import com.ubaya.kpd_160422124.databinding.ActivityNewQuestionBinding
 
 class NewQuestionActivity : AppCompatActivity() {
@@ -61,6 +63,19 @@ class NewQuestionActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) { }
         }
 
+        binding.txtURL.setOnKeyListener { v, keyCode, event ->
+            if(keyCode == KeyEvent.KEYCODE_ENTER) {
+                val url = binding.txtURL.text.toString()
+                val builder = Picasso.Builder(this)
+                builder.listener { picasso, uri, exception ->
+                    exception.printStackTrace()
+                }
+                builder.build().load(url).into(binding.imgPreview)
+            }
+            true
+        }
+
+
         binding.btnSave.setOnClickListener {
             val radioAnswer = findViewById<RadioButton>(binding.radioAnswer.
             checkedRadioButtonId)
@@ -70,7 +85,8 @@ class NewQuestionActivity : AppCompatActivity() {
             val newQuestion = QuestionBank.QuestionBank(
                 binding.txtNewQuestion.text.toString(),
                 radioAnswer.text.toString().lowercase().toBoolean(),
-                imgid
+                imgid, binding.txtURL.text.toString(),
+                binding.checkAvailable.isChecked
             )
 
             val questionsList = QuestionData.question.toMutableList()
