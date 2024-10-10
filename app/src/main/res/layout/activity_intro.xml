@@ -70,4 +70,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/btnEdit"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="352dp"
+        android:fontFamily="@font/unlock"
+        android:text="Edit"
+        android:textColor="#FFC107"
+        android:textColorLink="#FFC107"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,14 @@ class IntroActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra(PLAYER_NAME, playerName)
             startActivity(intent)
+            finish()
         }
+
+        binding.btnEdit.setOnClickListener {
+            val intent = Intent(this, QuestionListActivity::class.java)
+            startActivity(intent)
+        }
+
 //        setContentView(R.layout.activity_intro)
     }
 }
